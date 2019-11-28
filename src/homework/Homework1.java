@@ -1,19 +1,36 @@
 package homework;
 
 public class Homework1 {
-	public static void main(String[] args) {
+	private int year;
+	private int month;
+	private int day;
+	private int[] monthArray = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	private int total;
 
-		/*
-		 * 달력 만들기 1. 1년 1월 1일은 월요일 2. 1년은 365일, 윤년은 366일 - 2월 29일 3. 윤년은 4년마다
-		 * 발생하고 그중에서 100의 배수는 제외하고 400의 배수는 제외하지 않는다. 4. 2019년 12월 25일은 무슨 요일?
-		 */
-		int year = 2019;
-		int month = 12;
-		int day = 25;
-		String message = null;
-		int[] monthArray = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-		int total = (year - 1) * 365 + (year - 1) / 4 - (year - 1) / 100 + (year - 1) / 400;
+	public Homework1(int year, int month, int day) {
+		this.year = year;
+		this.month = month;
+		this.day = day;
+		get();
+	}
 
+	public Homework1(int y, int m) {
+		this(y, m, 0);
+	}
+
+	public Homework1(int y) {
+		this(y, 0, 0);
+	}
+
+	public void set(int y, int m, int d) {
+		year = y;
+		month = m;
+		day = d;
+		get();
+	}
+
+	private int get() {
+		total = (year - 1) * 365 + (year - 1) / 4 - (year - 1) / 100 + (year - 1) / 400;
 		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
 			monthArray[1] = 29;
 		} else {
@@ -24,7 +41,11 @@ public class Homework1 {
 			total += monthArray[i];
 		}
 		total += day;
+		return total;
+	}
 
+	public void print() {
+		String message = null;
 		switch (total % 7) {
 		case 0:
 			message = "일요일";
@@ -51,5 +72,17 @@ public class Homework1 {
 			System.out.printf("Error");
 		}
 		System.out.printf("%d년 %d월 %d일 %s 입니다.", year, month, day, message);
+
+	}
+
+	public static void main(String[] args) {
+		Homework1 test = new Homework1(2019, 12, 25);
+		// test.set(2019,12,25);
+		test.print();
+		byte a = 100;
+		byte b=  120;
+		//byte c =(byte)(a+b);
+		double c = (int)100.4;
+		System.out.print(c);
 	}
 }

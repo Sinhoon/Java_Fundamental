@@ -1,6 +1,7 @@
 package homework;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Homework2 {
 	public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class Homework2 {
 		char[] ch = input.toCharArray();
 		char temp;
 
-		for (int i = 0; i < ch.length / 2 - 1; i++) {
+		for (int i = 0; i < ch.length / 2 ; i++) {
 			temp = ch[i];
 			ch[i] = ch[ch.length - (i + 1)];
 			ch[ch.length - (i + 1)] = temp;
@@ -23,7 +24,7 @@ public class Homework2 {
 
 		// 1-100가지 소수를 구하시오
 		int maxrange = 100;
-		ArrayList<Integer> result = new ArrayList<Integer>();
+		LinkedList<Integer> result = new LinkedList<Integer>();
 		for (int i = 2; i <= maxrange; i++) {
 			for (int j = 2; j <= i; j++) {
 				if (j == i) {
