@@ -7,6 +7,15 @@ public class TryCatchDemo {
 		return avg;
 	}
 	public static void main(String[] args) {
-		
+		try{
+			int k = Integer.parseInt(args[0]);
+			int e = Integer.parseInt(args[1]);
+			
+		}
+		catch(NumberFormatException e){
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+			System.out.println("문자말고 숫자");
+		}
 	}
 }
