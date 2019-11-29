@@ -14,8 +14,8 @@ public class TryCatchDemo {
 		}
 		catch(NumberFormatException e){
 			e.printStackTrace();
-			System.out.println(e.getMessage());
-			System.out.println("문자말고 숫자");
+			System.err.println(e.getMessage());
+			System.err.println("문자말고 숫자");
 		}
 	}
 }
