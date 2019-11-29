@@ -13,8 +13,7 @@ public class MemberManagementDemo {
 	public void print() {
 		System.out.println("************************************************");
 		System.out.println("1)insert 2)update 3)delete 4)search 5)show 6)exit");
-		System.out.println("****"
-				+ "********************************************");
+		System.out.println("****" + "********************************************");
 
 	}
 
@@ -46,12 +45,28 @@ public class MemberManagementDemo {
 	public void insert() {
 		String id = console("아이디>");
 		String name = console("이름>");
+		int count = list.size();
 
-		Member m = new Member(id, name);
-		list.add(m);
-
-		System.out.printf("총 회원은  %d 명입니다. %n", list.size());
-		choice();
+		if (count == 0) {
+			Member m = new Member(id, name);
+			list.add(m);
+			System.out.printf("총 회원은  %d 명입니다. %n", list.size());
+			show();
+		} else {
+			for (Member i : list) {
+				count -= 1;
+				if (i.getId().equals(id)) {
+					System.out.println("이미 아이디 존재합니다");
+					choice();
+					return;
+				} else if (count == 0) {
+					Member m = new Member(id, name);
+					list.add(m);
+					System.out.printf("총 회원은  %d 명입니다. %n", list.size());
+					show();
+				}
+			}
+		}
 	}
 
 	public void update() {
@@ -64,7 +79,7 @@ public class MemberManagementDemo {
 				System.out.println("<update member>");
 				System.out.println(i);
 				show();
-				break;
+				return;
 			} else if (count == 0) {
 				System.out.println("수정할 아이디가 없습니다.");
 				choice();

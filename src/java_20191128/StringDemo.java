@@ -68,6 +68,8 @@ public class StringDemo {
 		System.out.printf("%n");
 		System.out.println(str);
 		
+		int c = (byte)1000;
+		System.out.println(c+"\b"+"dd");
 		
 	}
 }

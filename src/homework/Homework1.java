@@ -79,10 +79,5 @@ public class Homework1 {
 		Homework1 test = new Homework1(2019, 12, 25);
 		// test.set(2019,12,25);
 		test.print();
-		byte a = 100;
-		byte b=  120;
-		//byte c =(byte)(a+b);
-		double c = (int)100.4;
-		System.out.print(c);
 	}
 }
