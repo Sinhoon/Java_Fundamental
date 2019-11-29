@@ -11,9 +11,9 @@ public class MemberManagementDemo {
 	}
 
 	public void print() {
-		System.out.println("*************************************************");
+		System.out.println("************************************************");
 		System.out.println("1)insert 2)update 3)delete 4)search 5)show 6)exit");
-		System.out.println("*************************************************");
+		System.out.println("************************************************");
 
 	}
 
