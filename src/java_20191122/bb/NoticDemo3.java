@@ -7,5 +7,6 @@ public class NoticDemo3 extends NoticDemo2 {
 		NoticDemo3 nc = new NoticDemo3();
 		nc.number = 5;
 		nc.tiltle = "title";
+
 	}
 }
