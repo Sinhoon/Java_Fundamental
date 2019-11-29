@@ -11,9 +11,17 @@ public class MemberManagementDemo {
 	}
 
 	public void print() {
+<<<<<<< HEAD
 		System.out.println("************************************************");
+=======
+		System.out.println("*************************************************");
+>>>>>>> refs/remotes/origin/master
 		System.out.println("1)insert 2)update 3)delete 4)search 5)show 6)exit");
+<<<<<<< HEAD
 		System.out.println("************************************************");
+=======
+		System.out.println("*************************************************");
+>>>>>>> refs/remotes/origin/master
 
 	}
 
