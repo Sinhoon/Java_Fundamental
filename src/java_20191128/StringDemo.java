@@ -56,12 +56,8 @@ public class StringDemo {
 		double aff = as.doubleValue();
 		double asd = Integer.parseInt(ad);
 		
+	
 		
-		String phone = "010-2324-3253";
-		String[] temp = phone.split("-");
-		for (String string : temp) {
-			System.out.println(string);
-		}
 		
 		str =String.format("%3$,10.2f %d %d",10000,20,30000.24);
 		System.out.print("\n");
