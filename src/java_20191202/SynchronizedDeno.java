@@ -1,6 +1,6 @@
 package java_20191202;
 
-public class SynchronizedDemo implements Runnable{
+public class SynchronizedDeno implements Runnable{
 	int x;
 	int y;
 	@Override
@@ -19,8 +19,8 @@ public class SynchronizedDemo implements Runnable{
 		}
 	}
 	public static void main(String[] args){
-		SynchronizedDemo s1 = new SynchronizedDemo();
-		SynchronizedDemo s2 = new SynchronizedDemo();
+		SynchronizedDeno s1 = new SynchronizedDeno();
+		SynchronizedDeno s2 = new SynchronizedDeno();
 		Thread t1 = new Thread(s1);
 		Thread t2 = new Thread(s1);
 		
