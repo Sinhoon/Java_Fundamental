@@ -1,5 +1,7 @@
 package java_20191128;
 
+import java.util.HashSet;
+
 public class StringBufferDemo {
 	public static void main(String[] args) {
 		StringBuffer s1 = new StringBuffer("test");
