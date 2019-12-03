@@ -18,6 +18,5 @@ public class StringBufferDemo {
 		sql.setLength(0);
 		System.out.println(sql);
 		
-
 	}
 }
