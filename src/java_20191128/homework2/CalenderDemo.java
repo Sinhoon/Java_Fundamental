@@ -7,7 +7,10 @@ public class CalenderDemo {
 		Calender s = new Calender();
 		while (true) {
 			try {
-				s.start();
+				boolean a = s.start();
+				if(a==false){
+					break;
+				}
 			} catch (ArrayIndexOutOfBoundsException e) {
 				System.err.println("월을 제대로 적으세요 (1~12)");
 			} catch (NumberFormatException e) {

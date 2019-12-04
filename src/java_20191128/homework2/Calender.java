@@ -78,16 +78,25 @@ public class Calender {
 		res = result.get(max);
 	}
 
-	public void start() throws Exception {
+	public boolean start() throws Exception {
 		cut();
 		if (res.length == 3) {
 			insert(Integer.parseInt(res[0]), Integer.parseInt(res[1]), Integer.parseInt(res[2]));
+			return true;
 		} else if (res.length == 2) {
 			insert(Integer.parseInt(res[0]), Integer.parseInt(res[1]));
+			return true;
 		} else if (res.length == 1) {
-			insert(Integer.parseInt(res[0]));
+			if(res[0]=="exit"){
+				return false;
+			}
+			else{
+				insert(Integer.parseInt(res[0]));
+				return true;
+			}
 		} else {
 			System.out.println("잘못 입력하셨습니다.");
+			return true;
 		}
 	}
 

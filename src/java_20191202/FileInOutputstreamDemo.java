@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class FileInOutputstreamDemo {
 	public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class FileInOutputstreamDemo {
 			fis = new FileInputStream("C:\\dev\\io\\2019\\12\\jdk.exe");
 			fos = new FileOutputStream("C:\\dev\\io\\2019\\12\\jdk-4.exe");
 			/*
+			 * 
 			 * int readByte = 0; //read() :한바이트씩 반환 while((readByte= fis.read())
 			 * != -1){ //write() :한바아트씩 쓰기 fos.write(readByte);
 			 */
