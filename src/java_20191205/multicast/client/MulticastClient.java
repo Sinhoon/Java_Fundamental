@@ -1,4 +1,4 @@
-package java_20191204.unicast.client;
+package java_20191205.multicast.client;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -24,18 +24,18 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class UnicastClient implements ActionListener {
+public class MulticastClient implements ActionListener {
 	private JFrame jframe;
-	private JTextArea jta;
+	JTextArea jta;
 	private JButton jbtn;
 	private JTextField jtf;
 	private String id;
 	private String ip;
 	private int port;
 	private BufferedWriter bw;
-	private BufferedReader br;
+	BufferedReader br;
 
-	public UnicastClient(String id, String ip, int port) {
+	public MulticastClient(String id, String ip, int port) {
 		super();
 		this.port = port;
 		this.id = id;
@@ -83,9 +83,7 @@ public class UnicastClient implements ActionListener {
 					bw.write("exit");
 					bw.flush();
 					bw.newLine();
-					if (br.readLine() =="exit"){
-						System.exit(0);
-					}
+					
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -103,7 +101,10 @@ public class UnicastClient implements ActionListener {
 			Socket socket = new Socket(ip, port);
 			bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
+			
+			MulticastClientThread mct= new MulticastClientThread(this);
+			Thread t = new Thread(mct);
+			t.start();
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -116,7 +117,7 @@ public class UnicastClient implements ActionListener {
 
 	public static void main(String[] args) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
-		new UnicastClient("신훈", "192.168.0.211", 3000).connect();
+		new MulticastClient("신훈", "192.168.0.211", 3000).connect();
 	}
 
 	@Override
@@ -126,11 +127,10 @@ public class UnicastClient implements ActionListener {
 		message = jtf.getText();
 		if (obj == jbtn) {
 			try {
-				bw.write(message);
+				bw.write(id+":"+message);
 				bw.newLine();
 				bw.flush();
-				String readline = br.readLine();
-				jta.append(id + ":" + readline + "\n");
+
 				jtf.setText("");
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
@@ -141,8 +141,7 @@ public class UnicastClient implements ActionListener {
 				bw.write(id+":"+message);
 				bw.newLine();
 				bw.flush();
-				String readline = br.readLine();
-				jta.append(id + ":" + readline + "\n");
+
 				jtf.setText("");
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block

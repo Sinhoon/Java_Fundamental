@@ -1,0 +1,189 @@
+class,                method,                                   member변수 종류
+일반,abstract,final   static final abstract sychronized         static final 인스턴스
+length 배열 length() 문자열
+
+캐스팅 circuit	byte a = 100;
+		byte b=  120;
+		byte c =(byte)(a+b);
+
+       cut      int c = (int)100.4;
+
+
+정적 할당 array
+동적 할당 arraylist - copy 후 null 공간 확보후 생성
+	  linkedlist 
+
+Stirng  -> char[]
+
+
+
+생성자 - 인스턴스 변수 초기화
+
+객체전에 호출
+
+생성자 - private 하면 ??  - ex/math  ->  Math m   =   new Math() - 오류  -> 1. 모든 메소드 static 이므로 굳이 객체생성 필요 x 2. singletom 객체
+					-public	      -private 
+					-class가결정  -생성자가 결정
+
+this - 1. 자기자신 객체				    this.
+     - 2. 다른 생성자 호출 - 생성자에서만 호출가능  this(~)
+
+super - 1. 부모의 객체
+	2. 부모 생성자 호출
+
+
+
+static 초기화 - static 변수 초기화
+
+static block은 메인 전에 호출 
+
+템플릿 유틸리티
+
+
+부모가 runtime exception -  예외 선택사항 외는 필수사항
+ i18n internationalization 국제화
+ l10n localization 지역화
+
+
+
+int[] c;       -> c는 메모리에 할당도 안됨
+c= new int[4];
+
+int[] c= null; -> c는 메모리에 올라와잇음      ---> 멤버변수는 초기화 되나 local변수 초기화 안됨
+c= new int[4];
+
+
+가장 윗 부모 = java.lang.Object
+
+
+parent p       = new son()       		                       parent p = new parent()  차이  자식 오버라이딩된 메소드 사용								             
+-------방향      ---------메모리할당                                    
+추상,인터페이스일때 객체생성 못하므로 자식클래스(일반클래스) 이용
+
+son s          = new parent()
+불가..   
+
+
+
+지역 변수는 초기화 필수, (메소드 내에서 선언)
+멤버 변수(class , instance)는 자동 초기화 지원(클래스 차원에서 선언)
+
+
+collection interface
+collections class
+
+인터페이스내의 변수 - public static final 
+	       메소드 - public abstract  - 무조건 추상메소드 일반메소드 올수없음 
+
+배포 3가지 - 
+             api 파일  - export javadoc
+	     jar 파일  - class파일 묶어서 
+
+ 
+equals - ==와 같으나 객체내용비교하기위해 오버라이딩하여사용 ex) "aa".equals("aa"); - hascode도 override 해야됨
+
+== 연산자는 무조건 같은 객체 참조하는지 비교
+
+
+
+
+		// 1.4이전버전은 wrapper로 집어넣어야되나 autoboxing에 의해서 primitive datatype 도 가능
+		ArrayList list = new ArrayList();
+		list.add(new Integer(1));
+		list.add(new Integer(2));
+		Integer i1 = (Integer) list.get(0);
+		Integer i2 = (Integer) list.get(1);
+		int a = i1.intValue() + i2.intValue();
+		System.out.println(a);
+
+		// 1.5 이후
+        	// <Integer> 안쓰면 그냥 object 나와서 형변환해줘야됨
+		ArrayList<Integer> list1 = new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		System.out.println(list.get(0));
+		Integer i3 = list1.get(0);
+		Integer i4 = list1.get(1);
+		int a1 = i3+i4;
+
+
+
+		String str = String.valueOf(10); // 10+""
+		Integer.parseInt(str);
+
+
+wrapper ,string = immutable 불변 
+
+ex) m(string s){ s+= "123"}  string s = "abc"  m(s)-> abc  --> call by reference 해도 안바뀜 그냥 새로운 object("abc123") 생성 stringbuffer는 바뀜
+
+string class toString() overriding - java.lang.string@sada --> abc(내용)
+
+		Integer as = Integer.valueOf(10);
+		String ad = String.valueOf(10);
+		double aff = as.doubleValue();
+		double asd = Integer.parseInt(ad);
+
+
+
+010-232-2424
+
+010,232,2424 > token  - >구분자(딜리미니터)
+
+
+// stringbuffer object의 equal()메소드 overriding 하지 않았다.
+
+runtimeexception - subclass 는 예외처리해도되고 안해도되
+		
+
+
+static 메소드는 static 관련 메소드 변수만 사용가능
+
+instance 메소드는 static,instance 호출가능
+
+buffer 는 남은거 출력하기위해 flush 필요
+
+
+
+io 세개 - file text binary
+thread 두개 - extends thread  implements runnable
+
+sys.in = return inputstream(1byte)
+sys.out = return printstream
+
+stream chaining --> buffered 사용
+
+byte 
+FileInputStream 파일 Inputstream return  -> BufferedInputStream  
+FileOuputStream 파일 Inputstream return  -> BufferedOutputStream -> PrintStream
+
+바이트스트림 -> 문자스트림 InputStreamReader
+
+문자
+FileReader  -> BufferedReader 
+FileWriter  -> BufferedWriter ->PrintWriter
+
+입력 - 파일(binary(1byte,FileInputStream ->byte[]) ,text(2byte,FileReader ->BufferedReader))  키보드(System.in)  네트워크(socket.getinputstream,socket.getoutputstream)
+출력 - 파일(binary(1byte,FileOutputStream -> byte[]) ,text(2byte,FileWriter ->BufferedWriter -> PrintWriter))   모니터(System.out,err)
+
+
+perference templates
+
+
+문자 추가제거 = stringbuffer  => stringbuffer.tostring(string으로 바꿔줘서 equal 내용 비교) 
+string buffer  ==  , equal -> fasle
+string  = ""   ==  , equal -> true
+string  = new  ==  -> false , equal -> true
+
+
+
+urlclass= url결과   -> urlconnection => urlclass + 서버 header 정보
+
+thread 사용 두가지 - extends thread , run overriding  /// implements runable ,run overriding -> new thread(runable객체)
+
+
+crud
+ Create(생성), Read(읽기), Update(갱신), Delete(삭제)
+
+jdbc - java database  접근
+
+3tier csd

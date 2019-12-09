@@ -1,0 +1,11 @@
+<dql>
+select
+
+database block 단위 저장하므로 order by 하자.
+* , or(full scan) , is null(full scan) 쓰지말자. 
+
+primary key - index scan 빠름 따라서 join시 primary key를 상수로 = 변수 driving 상수
+
+
+트랜잭션(Transaction)은 데이터베이스의 상태를 변환시키는 하나의 논리적 기능을 수행하기 위한 작업의 단위 또는 한꺼번에 모두 수행되어야 할 일련의 연산
+하나하나의 operation을 한꺼번에 수행되어야할 연산,작업단위
