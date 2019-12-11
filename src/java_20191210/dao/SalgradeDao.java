@@ -19,6 +19,7 @@ public class SalgradeDao {
 		}
 
 	}
+	
 
 	private static SalgradeDao single;
 

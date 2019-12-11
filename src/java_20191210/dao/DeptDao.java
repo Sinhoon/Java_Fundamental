@@ -21,7 +21,6 @@ public class DeptDao {
 	static {
 		try {
 			// org.mariadb.jdbc,driver
-			System.out.println("dd");
 			Class.forName("org.mariadb.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
