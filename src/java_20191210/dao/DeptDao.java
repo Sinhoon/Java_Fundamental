@@ -74,11 +74,7 @@ public class DeptDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (pstmt != null)
-					pstmt.close();
-
-				if (con != null)
-					con.close();
+				close(con, pstmt);
 
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -109,11 +105,7 @@ public class DeptDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (pstmt != null)
-					pstmt.close();
-
-				if (con != null)
-					con.close();
+				close(con, pstmt);
 
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -145,11 +137,7 @@ public class DeptDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (pstmt != null)
-					pstmt.close();
-
-				if (con != null)
-					con.close();
+				close(con, pstmt);
 
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -182,11 +170,7 @@ public class DeptDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (pstmt != null)
-					pstmt.close();
-
-				if (con != null)
-					con.close();
+				close(con, pstmt);
 
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -224,17 +208,21 @@ public class DeptDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (pstmt != null)
-					pstmt.close();
-
-				if (con != null)
-					con.close();
+				close(con, pstmt);
 
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 		return dto;
+	}
+
+	private void close(Connection con, PreparedStatement pstmt) throws SQLException {
+		if (pstmt != null)
+			pstmt.close();
+
+		if (con != null)
+			con.close();
 	}
 
 }

@@ -1,7 +1,8 @@
-package java_20191210.dao;
+package java_20191210.demo;
 
 import java.util.ArrayList;
 
+import java_20191210.dao.DeptDao;
 import java_20191210.dto.DeptDto;
 import java_20191210.dto.SalgradeDto;
 

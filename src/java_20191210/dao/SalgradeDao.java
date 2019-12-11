@@ -144,5 +144,32 @@ public class SalgradeDao {
 
 		return list;
 	}
+	
+	public SalgradeDto select(int setgrade){
+		SalgradeDto dto = null;
+		Connection con = null; 
+		PreparedStatement psmt = null;
+		
+		try {
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/acorn?", "root", "root1234");
+			StringBuffer sql = new StringBuffer();
+			sql.append("select * from salgrade where grade = ?");
+			psmt = con.prepareStatement(sql.toString());
+			int index = 0;
+			psmt.setInt(++index, setgrade);
+			ResultSet rs = psmt.executeQuery();
+			if(rs.next()){
+				int grade = rs.getInt(1);
+				int losal = rs.getInt(2);
+				int hisal = rs.getInt(3);
+				dto = new SalgradeDto(grade,losal,hisal);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		return dto;
+	}
 
 }
