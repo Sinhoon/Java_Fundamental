@@ -4,21 +4,20 @@ public class SwitchDemo {
 	public static void main(String[] args) {
 		int month = Integer.parseInt(args[0]);
 		String season = null;
-		switch(month){
-		case 12:
+		switch(season){
 		case 1:	
-		case 2:	season = "°Ü¿ï"; break;
+		case 2:	season = "ï¿½Ü¿ï¿½"; break;
 		case 3:	
 		case 4:	
-		case 5:	season = "º½"; break;
+		case 5:	season = "ï¿½ï¿½"; break;
 		case 6:	
 		case 7:	
-		case 8:	season = "¿©¸§"; break;
+		case 8:	season = "ï¿½ï¿½ï¿½ï¿½"; break;
 		case 9:	
 		case 10:
-		case 11:season = "°¡À»"; break;
-		default:season = "¾øÀ½";  
+		case 11:season = "ï¿½ï¿½ï¿½ï¿½"; break;
+		default:season = "ï¿½ï¿½ï¿½ï¿½";  
 		}
-		System.out.println(month + "¿ùÀº " + season + "ÀÔ´Ï´Ù....");
+		System.out.println(month + "ï¿½ï¿½ï¿½ï¿½ " + season + "ï¿½Ô´Ï´ï¿½....");
 	}
 }

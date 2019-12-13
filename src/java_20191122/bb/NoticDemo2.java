@@ -14,12 +14,12 @@ public class NoticDemo2 extends Notice {
 		//nc.hit = 30;
 		nc.abc = 10;
 		
-/*		Notice ns = new Notice();
+		Notice ns = new Notice();
 		ns.number = 10;
 		ns.tiltle = "title";
 		ns.hit = 30;
 		ns.abc = 10;
-		
+/*		
 		NoticeChild nv = new NoticeChild();
 		nv.number = 10;
 		nv.tiltle = "title";

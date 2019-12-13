@@ -187,3 +187,23 @@ crud
 jdbc - java database  접근
 
 3tier csd
+
+
+Class.forName(class) = > 클래스의 static 변수나 block 메모리에 올림
+new class            = > static 메모리에 올리고 객체 생성
+
+
+singleton - 객체 생성 못하므로 static 메소드 이용해서 생성 --> 따라서 static 변수로 선언  ex) private static xxx;  public static getinstance() new xxx;
+
+
+
+       res = ListNode(result[len(result)-1])
+        a = res;
+        for i in range(len(result)-2,-1,-1):
+            a.next = ListNode(result[i])
+            a= a.next
+            #res.next = ListNode(result[i])
+            #res= res.next
+
+
+

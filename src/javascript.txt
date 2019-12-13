@@ -1,0 +1,17 @@
+hoisting 변수 선언만 위에서 됨 true
+=== 자료형 까지 비교
+
+console.log(myname===undefined);
+var myname = " 신 훈 "
+
+-hoisting
+foo(); 
+ function foo(name){
+ console.log();
+        }
+
+-error
+baz(); 
+ var baz = function(){
+ console.log();
+        }
