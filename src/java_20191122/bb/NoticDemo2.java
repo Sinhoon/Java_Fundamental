@@ -16,9 +16,9 @@ public class NoticDemo2 extends Notice {
 		
 		Notice ns = new Notice();
 		ns.number = 10;
-		ns.tiltle = "title";
-		ns.hit = 30;
-		ns.abc = 10;
+		//ns.tiltle = "title";
+		//ns.hit = 30;
+		//ns.abc = 10;
 /*		
 		NoticeChild nv = new NoticeChild();
 		nv.number = 10;

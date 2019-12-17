@@ -4,7 +4,7 @@ public class SwitchDemo {
 	public static void main(String[] args) {
 		int month = Integer.parseInt(args[0]);
 		String season = null;
-		switch(season){
+		switch(month){
 		case 1:	
 		case 2:	season = "�ܿ�"; break;
 		case 3:	
